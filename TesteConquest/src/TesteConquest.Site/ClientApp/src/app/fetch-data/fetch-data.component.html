@@ -1,0 +1,19 @@
+<p>Digite o número de autores que deseja consultar!</p>
+
+<p><input type="text" id="numeroAutores" name="numeroAutores" [(ngModel)]="numAutores"/> </p>
+<p><button class="btn btn-primary" (click)="getAutores(numAutores)">Buscar autores</button></p>
+
+<!--<p *ngIf="!autores"><em>Car...</em></p>-->
+
+<table class='table table-striped' *ngIf="autores">
+  <thead>
+    <tr>
+      <th>Nome do autor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of autores">
+      <td>{{ a.nomeFormatado }}</td>
+    </tr>
+  </tbody>
+</table>
